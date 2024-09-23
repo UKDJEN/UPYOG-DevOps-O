@@ -1,5 +1,7 @@
 global:
   domain: nagarsewa-uat.uk.gov.in
+  setup: fullsetup
+  containerRegistry: ukdsdc
 
 cluster-configs:
     namespaces:
