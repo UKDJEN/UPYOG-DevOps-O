@@ -109,7 +109,7 @@ lifecycle:
             - -c
             - "sleep 10"
 
-memory_limits: "256Mi"
+memory_limits: "512Mi"
 resources: |
   {{- if eq .Values.appType "java-spring" -}}
   requests:
@@ -250,7 +250,7 @@ service:
 
 serviceMonitor:
   honorLabels: true
-  # interval: 2m  
+  interval: 15s
 
 cron:
   namespace: egov
@@ -265,3 +265,7 @@ cron:
 
   ## Add additional mounts
   extraVolumeMounts: |
+
+vpa:
+  enabled: false  
+  updateMode: "Off"

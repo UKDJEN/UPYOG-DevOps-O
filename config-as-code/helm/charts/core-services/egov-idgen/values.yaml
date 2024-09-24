@@ -27,10 +27,10 @@ healthChecks:
   readinessProbePath: "/egov-idgen/health"
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx384m -Xms256m"
+heap: "-Xmx192m -Xms192m"
 java-args: "-Dspring.profiles.active=monitoring"
 idformat-from-mdms: "false"
-autocreate-new-seq: "false"
+autocreate-new-seq: "true"
 
 # Additional Container Envs
 env: |

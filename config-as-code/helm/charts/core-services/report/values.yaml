@@ -26,8 +26,9 @@ healthChecks:
   readinessProbePath: "/report/health"
 tracing-enabled: "true"
 report-locationsfile-path: "file:///work-dir/configs/reports/reportFileLocationsv1.txt"
-heap: "-Xmx384m -Xms256m"
+heap: "-Xmx192m -Xms192m"
 spring-datasource-tomcat-max-active: "5"
+report-query-timeout: "60"
 
 # Additional Container Envs
 env: |
@@ -47,6 +48,10 @@ env: |
     value: "false"  
   - name: MANAGEMENT_SECURITY_ENABLED
     value: "false"  
+  {{- if index .Values "report-query-timeout" }}
+  - name: REPORT_QUERY_TIMEOUT
+    value: {{ index .Values "report-query-timeout" | quote }}
+  {{- end }}
   - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
@@ -68,19 +73,11 @@ env: |
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
   {{- end }}
-  {{- if index .Values "cluster-configs" "configmaps" "egov-config" "data" "db-read-url" }}
   - name: SPRING_DATASOURCE_URL
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: db-read-url
-  {{- else if index .Values "cluster-configs" "configmaps" "egov-config" "data" "db-url" }}
-  - name: SPRING_DATASOURCE_URL
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: db-url
-  {{- end }}         
+        key: db-read-url        
   - name: APP_TIMEZONE
     valueFrom:
       configMapKeyRef:

@@ -252,7 +252,7 @@ ingress:
   zuul: false
   waf: 
     enabled: false
-  #hostName: citya-niuatt.niua.in
+  #hostName: jalandhar-dev.egovernments.org
   additionalAnnotations: |
     nginx.ingress.kubernetes.io/rewrite-target: /services
   context: "services"
