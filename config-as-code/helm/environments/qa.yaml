@@ -1,7 +1,7 @@
 global:
   domain: nagarsewa-uat.uk.gov.in
   setup: fullsetup
-  containerRegistry: egovio
+  containerRegistry: ukdsdc
 
 cluster-configs:
     namespaces:
