@@ -17,16 +17,16 @@ initContainers: {}
 # Container Configs
 image:
   repository: "docker.elastic.co/kibana/kibana"
-  tag: 6.6.2
+  tag: 6.4.2
 replicas: "1"
 httpPort: 5601
 elasticsearchHosts: "http://elasticsearch-data-infra-v1.es-cluster-infra:9200"
-serverBasePath: "/logging"
-healthCheckPath: "logging/app/kibana"
+serverBasePath: "/kibana-infra"
+healthCheckPath: "kibana-infra/app/kibana"
 healthChecks:
   enabled: true
-  livenessProbePath: "/logging/"
-  readinessProbePath: "/logging/"            
+  livenessProbePath: "/kibana-infra/"
+  readinessProbePath: "/kibana-infra/"            
 
 # Additional Container Envs
 env: |
