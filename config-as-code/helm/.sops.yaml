@@ -7,3 +7,5 @@ creation_rules:
           kms: 'arn:aws:kms:ap-south-1:008971666313:key/10d47c1d-a516-4fb3-b993-e62fcc2c9a94'
         - path_regex: environments/ci\-secrets\.yaml$
           kms: 'arn:aws:kms:ap-south-1:008971666313:key/10d47c1d-a516-4fb3-b993-e62fcc2c9a94'
+        - path_regex: environments/uat\-secrets\.yaml$
+          kms: 'arn:aws:kms:ap-south-1:008971666313:key/10d47c1d-a516-4fb3-b993-e62fcc2c9a94'
