@@ -33,7 +33,7 @@ jenkins:
 
   jobBuilder:    # Add jobBuilder repo's, add repo's ssh link
     repos: >-
-      'https://github.com/UKDJEN/DIGIT-UKD.git'
+      'https://github.com/UKDJEN/DIGIT-UKD.git','https://github.com/UKDJEN/UPYOG.git'
   deploymentJobs:  # Setup deploymentJobs ACL 
     - name: ci    # deployment job name
       acl: [UKDJEN*ukdcicd-ci] # GitHub team name, Members of the team get access to deployment job
